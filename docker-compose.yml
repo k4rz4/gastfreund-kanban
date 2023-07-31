@@ -68,4 +68,4 @@ networks:
   default:
     external:
       name: traefik_default
-### docker network create traefik_default
+### Need to enable for service discovery `docker network create traefik_default`
