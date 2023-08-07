@@ -106,4 +106,14 @@ return [
         'table' => 'failed_jobs',
     ],
 
+    'rabbitmq' => [
+        'driver' => 'rabbitmq',
+        'factory_class' => Enqueue\AmqpLib\AmqpConnectionFactory::class,
+        'dsn' => env('RABBITMQ_DSN', null),
+        'host' => env('RABBITMQ_HOST', 'localhost'),
+        'port' => env('RABBITMQ_PORT', 5672),
+        'login' => env('RABBITMQ_LOGIN', 'guest'),
+        'password' => env('RABBITMQ_PASSWORD', 'guest'),
+    ],
+
 ];
