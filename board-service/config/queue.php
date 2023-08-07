@@ -70,7 +70,14 @@ return [
             'block_for' => null,
             'after_commit' => false,
         ],
-
+        
+        'rabbitmq' => [
+            'driver' => 'rabbitmq',
+            'queue' => env('RABBITMQ_QUEUE', 'default'),
+            'connection_timeout' => 60.0,
+            'read_write_timeout' => 60.0,
+            'exchange_declare' => env('RABBITMQ_EXCHANGE_DECLARE', true),
+        ],
     ],
 
     /*
