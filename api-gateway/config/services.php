@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'users' => [
+        'base_uri' => env('USER_SERVICE_BASE_URI'),
+    ],
+
 ];

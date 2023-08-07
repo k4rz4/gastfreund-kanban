@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['throttle:60,1', 'jwt.auth'])->group(function () {
+    Route::any('{any}', 'App\Http\Controllers\ApiGatewayController')->where('any', '.*');
+});
+
+Route::get('/health', function() {
+    return response()->json(['status' => 'healthy'], 200);
 });
