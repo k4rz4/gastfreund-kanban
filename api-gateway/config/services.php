@@ -34,5 +34,14 @@ return [
     'users' => [
         'base_uri' => env('USER_SERVICE_BASE_URI'),
     ],
+    'boards' => [
+        'base_uri' => env('BOARD_SERVICE_BASE_URI'),
+    ],
+    'lanes' => [
+        'base_uri' => env('LANE_SERVICE_BASE_URI'),
+    ],
+    'tickets' => [
+        'base_uri' => env('TICKET_SERVICE_BASE_URI'),
+    ],
 
 ];

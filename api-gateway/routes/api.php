@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::post('users/login', 'App\Http\Controllers\ApiGatewayController@login');
 
 Route::middleware(['throttle:60,1', 'jwt.auth'])->group(function () {
     Route::any('{any}', 'App\Http\Controllers\ApiGatewayController')->where('any', '.*');

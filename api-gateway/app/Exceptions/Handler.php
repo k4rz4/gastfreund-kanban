@@ -27,4 +27,15 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof \Illuminate\Http\Client\RequestException) {
+            return response()->json([
+                'error' => 'Failed to connect to the service.'
+            ], 500);
+        }
+
+        return parent::render($request, $exception);
+    }
 }
